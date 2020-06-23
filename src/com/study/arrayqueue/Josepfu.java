@@ -72,6 +72,32 @@ class CircleSingleLinkedList {
             System.out.println("参数输入有误， 请重新输入");
             return;
         }
+        Boy helper = first;
+        while (true){
+            if (helper.getNext() == first){
+                break;
+            }
+            helper =helper.getNext();
+        }
+        for (int j=0;j<startNo-1;j++){
+            first=first.getNext();
+            helper=helper.getNext();
+        }
+        while (true){
+            if (helper==first){
+                break;
+            }
+            for(int j = 0; j < countNum - 1; j++) {
+                first = first.getNext();
+                helper = helper.getNext();
+            }
+            //这时first指向的节点，就是要出圈的小孩节点
+            System.out.printf("小孩%d出圈\n", first.getNo());
+            //这时将first指向的小孩节点出圈
+            first = first.getNext();
+            helper.setNext(first); //
+        }
+        System.out.printf("最后留在圈中的小孩编号%d \n", first.getNo());
 
     }
 }
