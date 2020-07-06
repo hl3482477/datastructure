@@ -22,7 +22,6 @@ public class BubbleSort {
         for(int i =0; i < 80000;i++) {
             arr[i] = (int)(Math.random() * 8000000); //生成一个[0, 8000000) 数
         }
-
         Date data1 = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String date1Str = simpleDateFormat.format(data1);

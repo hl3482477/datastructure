@@ -33,7 +33,6 @@ public class SelectSort {
                 arr[minIndx] = arr[i];
                 arr[i] = min;
             }
-
             System.out.println("第"+(i+1)+"轮后~~");
             System.out.println(Arrays.toString(arr));// 1, 34, 119, 101
         }
