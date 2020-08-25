@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class SelectSort {
     public static void main(String[] args) {
-        int [] arr = {101, 34, 119, 1, -1, 90, 123};
+        int[] arr = {101, 34, 119, 1, -1, 90, 123};
         System.out.println("排序前");
         System.out.println(Arrays.toString(arr));
         selectSort(arr);
@@ -37,4 +37,5 @@ public class SelectSort {
             System.out.println(Arrays.toString(arr));// 1, 34, 119, 101
         }
     }
+
 }
