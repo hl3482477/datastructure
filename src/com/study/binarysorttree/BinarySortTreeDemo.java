@@ -72,6 +72,32 @@ class BinarySortTree {
                 } else if (parent.right != null && parent.right.value == value) {//是由子结点
                     parent.right = null;
                 }
+            }else if (targetNode.left!=null && targetNode.left!=null){
+                //删除有两颗子树的节点
+            }else {
+                //删除有一颗子树的节点
+                if (targetNode.left!=null){
+                    if (parent!=null){
+                        if (parent.left.value == value){
+                           parent.left = targetNode.left;
+                        }else if (parent.right.value == value){
+                            parent.right = targetNode.left;
+                        }
+                    }else {
+                        root = targetNode.left;
+                    }
+
+                }else {
+                    if (parent!=null){
+                        if (parent.left.value == value){
+                            parent.left = targetNode.right;
+                        }else if (parent.right.value == value){
+                            parent.right = targetNode.right;
+                        }
+                    }else {
+                        root = targetNode.right;
+                    }
+                }
             }
         }
     }
