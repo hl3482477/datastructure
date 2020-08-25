@@ -16,6 +16,26 @@ public class BinarySortTreeDemo {
         //中序遍历二叉排序树
         System.out.println("中序遍历二叉排序树~");
         binarySortTree.infixOrder(); // 1, 3, 5, 7, 9, 10, 12
+
+
+        binarySortTree.delNode(12);
+
+
+        binarySortTree.delNode(5);
+        binarySortTree.delNode(10);
+        binarySortTree.delNode(2);
+        binarySortTree.delNode(3);
+
+        binarySortTree.delNode(9);
+        binarySortTree.delNode(1);
+        binarySortTree.delNode(7);
+
+
+        System.out.println("root=" + binarySortTree.getRoot());
+
+
+        System.out.println("删除结点后");
+        binarySortTree.infixOrder();
     }
 }
 
@@ -72,8 +92,10 @@ class BinarySortTree {
                 } else if (parent.right != null && parent.right.value == value) {//是由子结点
                     parent.right = null;
                 }
-            }else if (targetNode.left!=null && targetNode.left!=null){
+            }else if (targetNode.left!=null && targetNode.right!=null){
                 //删除有两颗子树的节点
+                int i = deleteRightMin(targetNode.right);
+                targetNode.value = i;
             }else {
                 //删除有一颗子树的节点
                 if (targetNode.left!=null){
@@ -100,6 +122,18 @@ class BinarySortTree {
                 }
             }
         }
+    }
+
+    private int deleteRightMin(Node right) {
+        Node target =right;
+        //找到子树最小值
+        while (target.left!=null){
+            target = target.left;
+        }
+        //删除该节点
+        delNode(target.value);
+        return target.value;
+
     }
 
     //添加结点的方法
