@@ -168,6 +168,9 @@ class Node {
 
     // 返回 以该结点为根结点的树的高度
     public int height() {
+        if (this == null){
+            return 0;
+        }
         return Math.max(left == null ? 0 : left.height(), right == null ? 0 : right.height()) + 1;
     }
 
