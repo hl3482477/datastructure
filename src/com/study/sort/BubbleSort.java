@@ -10,14 +10,14 @@ import java.util.Date;
  */
 public class BubbleSort {
     public static void main(String[] args) {
-       /* int arr[] = {3, 9, -1, 10, 20};
+        int arr[] = {3, 9, -1, 10, 20};
         System.out.println("排序前");
         System.out.println(Arrays.toString(arr));
         bubbleSort(arr);
 
         System.out.println("排序后");
-        System.out.println(Arrays.toString(arr));*/
-
+        System.out.println(Arrays.toString(arr));
+/*
         int[] arr = new int[80000];
         for(int i =0; i < 80000;i++) {
             arr[i] = (int)(Math.random() * 8000000); //生成一个[0, 8000000) 数
@@ -32,26 +32,25 @@ public class BubbleSort {
 
         Date data2 = new Date();
         String date2Str = simpleDateFormat.format(data2);
-        System.out.println("排序后的时间是=" + date2Str);
+        System.out.println("排序后的时间是=" + date2Str);*/
     }
 
     public static void bubbleSort(int[] arr) {
-
         int temp = 0;
         boolean flag = false;
         for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = 0; j < arr.length - i - j; j++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
-                    flag = true;
+                    flag =true;
                     temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+                    arr[j] =arr[j+1];
+                    arr[j+1] =temp;
                 }
             }
-            if (!flag) {//在一趟排序中，一次交换都没有发生过
+            if (!flag){
                 break;
-            } else {
-                flag = false;
+            }else {
+                flag =false;
             }
         }
     }
