@@ -10,7 +10,7 @@ public class InsertSort {
 
     public static void main(String[] args) {
         int[] arr = {101, 34, 119, 1, -1, 89};
-        insertSort(arr);
+        insertSort2(arr);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -27,12 +27,36 @@ public class InsertSort {
             // 2. insertVal < arr[insertIndex] 待插入的数，还没有找到插入位置
             // 3. 就需要将 arr[insertIndex] 后移
             while (insertIndex >= 0 && insertVal < arr[insertIndex]) {
-                      arr[insertIndex+1] =arr[insertIndex];
-                      insertIndex--;
+                arr[insertIndex + 1] = arr[insertIndex];
+                insertIndex--;
             }
 
-            arr[insertIndex+1]=insertVal;
+            arr[insertIndex + 1] = insertVal;
 
         }
+    }
+
+
+    //插入排序
+    public static void insertSort2(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        int temp = 0;
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {
+              /*  temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;*/
+                swap(arr,j,j+1);
+            }
+        }
+    }
+
+
+    public static void swap(int[] arr, int i, int j) {
+        arr[i] = arr[i] ^ arr[j];
+        arr[j] = arr[i] ^ arr[j];
+        arr[i] = arr[i] ^ arr[j];
     }
 }

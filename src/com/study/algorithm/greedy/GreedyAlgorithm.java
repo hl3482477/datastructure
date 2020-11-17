@@ -5,7 +5,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class GreedyAlgorithm {
+    private static int a = 1;
     public static void main(String[] args) {
+        System.out.println(a);
         //创建广播电台,放入到Map
         HashMap<String, HashSet<String>> broadcasts = new HashMap<String, HashSet<String>>();
 
