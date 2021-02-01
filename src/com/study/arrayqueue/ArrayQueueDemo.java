@@ -6,7 +6,8 @@ import java.util.Scanner;
  * Created by 胡露
  * create time 2020/6/11 21:29
  */
-public class ArrayQueueDemo {
+public class
+ArrayQueueDemo {
     public static void main(String[] args) {
         //测试一把
         //创建一个队列

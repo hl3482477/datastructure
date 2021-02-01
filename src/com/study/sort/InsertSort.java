@@ -37,6 +37,8 @@ public class InsertSort {
     }
 
 
+
+
     //插入排序
     public static void insertSort2(int[] arr) {
         if (arr == null || arr.length < 2) {
