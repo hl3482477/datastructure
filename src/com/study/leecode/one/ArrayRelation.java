@@ -95,6 +95,7 @@ public class ArrayRelation {
         ListNode returnNode = new ListNode(0);
         ListNode listNode = returnNode;
         //变量保存进位值
+
         int carry = 0;
         while (l1 != null || l2 != null) {
             int v1 = l1 == null ? 0 : l1.val;
